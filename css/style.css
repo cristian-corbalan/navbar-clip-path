@@ -1,0 +1,128 @@
+* {
+  font-family: Montserrat, Arial, SansSerif;
+  box-sizing: border-box;
+}
+
+aside {
+  padding: 1em;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+aside p {
+  line-height: 1.6em;
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.max {
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  background: #FFFFFF;
+  top: 0;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 68px;
+  box-shadow: 0 6px 20px rgba(51, 51, 51, 0.3);
+  position: fixed;
+}
+header + aside {
+  margin-top: 68px;
+}
+header h1 {
+  margin: 0;
+  background: url("../res/img/logo.svg") no-repeat center center;
+  overflow: hidden;
+  width: 125px;
+  text-indent: -1000px;
+}
+header nav .menu-icon {
+  color: #333333;
+  font-size: 0;
+  text-decoration: none;
+  position: absolute;
+  right: 1rem;
+  top: 1.1rem;
+  z-index: 2;
+}
+header nav .menu-icon span {
+  font-size: 2rem;
+  color: #333333;
+}
+header nav .menu-icon span.icon-close {
+  color: #FFFFFF;
+}
+header nav .enlaces {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1.2s ease;
+  background: #11998e;
+  background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+  background: linear-gradient(to right, #38ef7d, #11998e);
+  clip-path: circle(0% at 100% 0%);
+  z-index: 1;
+}
+header nav .enlaces.show {
+  clip-path: circle(150% at 100% 0%);
+}
+header nav .enlaces li {
+  text-align: center;
+  margin-bottom: 1em;
+}
+header nav .enlaces li a {
+  display: block;
+  width: 100%;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+header nav .enlaces li a.active {
+  color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  header nav .menu-icon {
+    display: none;
+  }
+  header nav .enlaces {
+    clip-path: none;
+    position: static;
+    background: none;
+    flex-direction: row;
+  }
+  header nav .enlaces li {
+    margin-bottom: 0;
+    margin-right: 1em;
+  }
+  header nav .enlaces li:last-of-type {
+    margin-right: 0;
+  }
+  header nav .enlaces li a {
+    color: rgba(51, 51, 51, 0.6);
+    border-bottom: 2px solid transparent;
+    transition: all 1s ease;
+  }
+  header nav .enlaces li a.active {
+    color: #333333;
+  }
+  header nav .enlaces li a:hover {
+    border-bottom-color: #333333;
+    color: #333333;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
